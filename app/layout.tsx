@@ -1,30 +1,86 @@
-import type { Metadata } from "next"
-import { Poppins } from "next/font/google"
+import type { Metadata, Viewport } from "next"
+import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const poppins = Poppins({ 
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-poppins",
-  display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
 })
 
+const SITE_URL = "https://www.homedepotdiscounts.com"
+const SITE_NAME = "Home Depot Discounts"
+const TITLE = "The Home Depot Discounts They Don't Advertise"
+const DESCRIPTION =
+  "Discover how shoppers are unlocking hidden discount codes on tools, garden gear, paint, and home fixtures. Complete 5+ deals in five simple steps and get your discount delivered straight to your inbox."
+
 export const metadata: Metadata = {
-  title: "Home Depot Method",
-  description: "Discover how to claim $750 in Home Depot rewards with our simple method. Join thousands of homeowners already saving on tools, appliances, and home improvement essentials.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "Home Depot discount code",
+    "Home Depot promo code",
+    "Home Depot discounts",
+    "Home Depot deals",
+    "Home Depot rewards program",
+    "tools and hardware deals",
+    "lawn and garden deals",
+    "paint and home refresh deals",
+    "smart home and fixture deals",
+  ],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "shopping",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   generator: "v0.app",
   openGraph: {
     type: "website",
-    title: "Home Depot Method",
-    description: "Claim $750 in Home Depot rewards with our simple method.",
-    siteName: "Home Depot Method",
+    url: SITE_URL,
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: SITE_NAME,
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1024,
+        height: 1024,
+        alt: "A cordless drill, a red toolbox of hand tools, a potted plant with a garden trowel and watering can, a paint can with roller and color swatches, a smart thermostat, and a chrome faucet floating on an orange background",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Home Depot Method",
-    description: "Claim $750 in Home Depot rewards with our simple method.",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-image.png"],
   },
+  other: {
+    "apple-mobile-web-app-title": SITE_NAME,
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#E55A01",
+  colorScheme: "light",
+  width: "device-width",
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -33,10 +89,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
-      <body className={`${poppins.className} antialiased`}>
+    <html lang="en" className="bg-white">
+      <body className={`${inter.variable} font-sans antialiased`}>
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <Analytics />
       </body>
     </html>
   )
