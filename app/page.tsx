@@ -1,9 +1,5 @@
-import HomeDepotRewardLander from "@/components/home-depot-lander"
+import HomeDepotRewardLander from "@/components/homedepot-lander"
 
-export default function Home() {
-  return (
-    <main>
-      <HomeDepotRewardLander />
-    </main>
-  )
+export default function Page() {
+  return <HomeDepotRewardLander />
 }

@@ -10,10 +10,10 @@ const inter = Inter({
 })
 
 const SITE_URL = "https://www.homedepotdiscounts.com"
-const SITE_NAME = "Home Depot Discounts"
+const SITE_NAME = "Home Depot Christmas Discounts"
 const TITLE = "The Home Depot Discounts They Don't Advertise"
 const DESCRIPTION =
-  "Discover how shoppers are unlocking hidden discount codes on tools, garden gear, paint, and home fixtures. Complete 5+ deals in five simple steps and get your discount delivered straight to your inbox."
+  "Discover how shoppers are unlocking hidden Home Depot discounts this Christmas — on trees and wreaths, holiday lights, yard inflatables, and tool gifts. Complete 5+ deals in five simple steps and get your discount delivered straight to your inbox."
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   keywords: [
     "Home Depot discount code",
     "Home Depot promo code",
-    "Home Depot discounts",
-    "Home Depot deals",
-    "Home Depot rewards program",
-    "tools and hardware deals",
-    "lawn and garden deals",
-    "paint and home refresh deals",
-    "smart home and fixture deals",
+    "Home Depot Christmas sale",
+    "Home Depot holiday discounts",
+    "Home Depot Christmas trees",
+    "Home Depot holiday lights",
+    "Home Depot inflatables",
+    "Home Depot tool gifts",
+    "Home Depot Christmas decor",
   ],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1024,
         height: 1024,
-        alt: "A cordless drill, a red toolbox of hand tools, a potted plant with a garden trowel and watering can, a paint can with roller and color swatches, a smart thermostat, and a chrome faucet floating on an orange background",
+        alt: "Christmas flat-lay of a small decorated tree, holiday string lights, a mini inflatable snowman, a power drill tied with a red bow, and a pine wreath on a bright orange background",
       },
     ],
   },
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#E55A01",
+  themeColor: "#F96302",
   colorScheme: "light",
   width: "device-width",
   initialScale: 1,
